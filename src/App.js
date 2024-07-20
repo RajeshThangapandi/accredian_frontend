@@ -2,19 +2,13 @@ import React, { useState } from 'react';
 import ReferralBenefits from './components/ReferralBenefits';
 import ReferModal from './components/ReferModal';
 import Hero from './components/Hero';
-import Toast from './components/Toast';
+import { ToastContainer, toast } from 'react-toastify';
 import '../src/components/styles/tailwind.css';
 import axios from 'axios';
 
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
-const [toast, setToast] = useState({ message: '', visible: false });
 
-  const showToast = (message) => {
-    setToast({ message, visible: true });
-    setTimeout(() => {
-      setToast({ message: '', visible: false });
-    }, 3000); // Toast duration
-  };
 
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({
@@ -39,12 +33,13 @@ axios.post('https://accredian-backend-s4na.onrender.com/referrals', form)
   .then(response => {
     console.log('Success:', response.data);
 
-showToast('This is a simple toast notification!')
+ toast.success('Reference Send Successfully..');
 
     console.log(form);
     handleClose();
   })
   .catch(error => {
+    toast.error('Server Error.');
     console.error('Error:', error);
   });
 
