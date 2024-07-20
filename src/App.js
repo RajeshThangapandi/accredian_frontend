@@ -26,7 +26,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-axios.post('https://accredian-frontend-seven.vercel.app', form)
+axios.post('https://accredian-backend-s4na.onrender.com/referrals', form)
   .then(response => {
     console.log('Success:', response.data);
 
