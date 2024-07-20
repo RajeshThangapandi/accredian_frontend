@@ -8,9 +8,6 @@ import axios from 'axios';
 
 import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
-
-  
-
   const [open, setOpen] = useState(false);
   const [form, setForm] = useState({
     yourName: '',
@@ -49,12 +46,8 @@ axios.post('https://accredian-backend-s4na.onrender.com/referrals', form)
 
   return (
     <>
-   
    <Hero onOpenModal={handleOpen}/>
     <ReferralBenefits onOpenModal={handleOpen} />
-    
-    
-
     <ReferModal
       open={open}
       onClose={handleClose}
