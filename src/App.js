@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-
-import HowItWorks from './components/HowItWorks';
 import ReferralBenefits from './components/ReferralBenefits';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
 import ReferModal from './components/ReferModal';
-import ContactSection from './components/ContactSection';
 import Hero from './components/Hero';
 import '../src/components/styles/tailwind.css';
 import axios from 'axios';
@@ -31,7 +26,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-axios.post('https://accredian-backend-s4na.onrender.com/referrals', form)
+axios.post('https://accredian-frontend-seven.vercel.app', form)
   .then(response => {
     console.log('Success:', response.data);
    
